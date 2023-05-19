@@ -1,0 +1,7 @@
+package first;
+//Object cloning
+public class Hundredfive {
+public static void main( String[] args) {
+	
+}
+}

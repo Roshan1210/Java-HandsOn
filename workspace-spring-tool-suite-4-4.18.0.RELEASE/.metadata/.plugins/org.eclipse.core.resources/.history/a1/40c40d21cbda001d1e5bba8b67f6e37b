@@ -1,0 +1,53 @@
+package first;
+import java.lang.*;
+import java.lang.reflect.Modifier;
+//Reflection in java
+
+//Reflection is an API that is used to examine or modify the behavior of methods, classes, and interfaces at runtime
+//Reflection gives us information about the class to which an object belongs and also the methods of that 
+//class that can be executed by using the object.
+//Through reflection, we can invoke methods at runtime irrespective of the access specifier used with them.
+
+//Reflection can be used to get information about class, constructors, and methods
+//I’ve found reflection is very good for testing code. In the research world it is sometimes very 
+//beneficial to take advantage of its dynamic capabilities. You can also use it to by pass private, protected, 
+//etc. Again this is done for analyzing a class rather then for use in real world code.
+
+
+
+
+
+public class Hundredeight {
+	
+@SuppressWarnings("rawtypes")
+public static void main(String [] args) {
+	// Getting the class Object for UFOEnemyShip
+	// Everything in Java has a Class Object
+	Class c=Sumans.class;
+//	Class z=Class.forName("Sumans"); another way to create object
+	
+	String className=c.getName();
+	System.out.println(className);//first.Sumans
+	
+	 // Check modifiers of a class
+     // isAbstract, isFinal, isInterface, isPrivate, isProtected,
+	 // isStatic, isStrict, isSynchronized, isVolatile
+	int classModifiers =c.getModifiers();
+	System.out.println(Modifier.isPublic(classModifiers));//true
+	// You can get a list of interfaces used by a class
+	
+	Class[] interfaces=c.getInterfaces();
+	for(Class i:interfaces) {
+		System.out.print(i+" ");//interface first.Jangid interface first.Patil 
+	}
+	System.out.println();
+	Class classSuper=c.getSuperclass();
+	System.out.println(classSuper.getName());//first.Bhopal
+	
+	
+	
+}
+}
+//constructor chaining
+
+//Constructor chaining is the process of calling one constructor from another constructor with respect to current object. 

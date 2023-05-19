@@ -1,0 +1,15 @@
+package first;
+//Anonymous Inner Class1)extending class 2)by implementing interface3)Anonymous Inner class that defines inside method/constructor argument
+//1)
+class AC{
+	void show() {
+		System.out.println("In AC");
+	}
+}
+
+public class Ninetyone {
+public static void main(String [] args) {
+	AC a=new AC();
+	a.show();
+}
+}

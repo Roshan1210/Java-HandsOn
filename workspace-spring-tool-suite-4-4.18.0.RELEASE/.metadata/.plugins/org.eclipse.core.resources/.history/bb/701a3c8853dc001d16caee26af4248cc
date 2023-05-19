@@ -1,0 +1,29 @@
+package jdbc;
+//jdbc demo
+import java.sql.*;
+public class Demo2 {
+	private static Connection cn=null;
+	public static Connection fetchConnection() throws SQLException{
+		if(cn==null) {
+			String val="jdbc:mysql://localhost:3306/Anjali";
+			cn=DriverManager.getConnection(val, "root", "manager");
+		}
+		return cn;
+	}
+public static void main(String [] args) {
+	try(Connection cn=Demo2.fetchConnection();
+		Statement st=cn.createStatement();
+		ResultSet rst=st.executeQuery("SELECT * from roshan");
+			){
+		while(rst.next()) {
+			System.out.println(rst.getInt("id")+" "+rst.getString("name")+" "+rst.getDouble("marks"));
+		}
+	}
+	
+	catch(Exception e) {
+		
+	}
+	
+	
+}
+}

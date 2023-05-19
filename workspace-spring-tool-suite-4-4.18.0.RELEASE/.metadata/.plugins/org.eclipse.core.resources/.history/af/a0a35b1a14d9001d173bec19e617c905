@@ -1,0 +1,11 @@
+package first;
+//Anonymous Inner class that defines inside method/constructor argument
+interface I{
+	void show();
+}
+
+public class Ninetythree {
+public static void main(String [] args) {
+	
+}
+}

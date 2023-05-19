@@ -1,0 +1,7 @@
+package first;
+//I/O handling
+public class Hundredone {
+public static void main(String [] args) {
+	
+}
+}

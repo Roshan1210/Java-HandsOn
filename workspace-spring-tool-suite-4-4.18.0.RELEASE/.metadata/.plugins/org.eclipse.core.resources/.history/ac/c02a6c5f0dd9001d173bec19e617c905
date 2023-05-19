@@ -1,0 +1,32 @@
+package first;
+//Lambda Expression
+//
+interface Computable{
+	double compute(double d1,double d2);
+}
+interface ComputationUtils{
+	static double performAnyOperation(double a,double b,Computable operation) {
+		return operation.compute(a, b);
+	}
+}
+
+ class Adder implements Computable{
+	@Override
+	public double compute(double d1,double d2) {
+		return d1+d2;
+	}
+}
+
+public class Ninety {
+public static void main(String [] args) {
+	System.out.println("addition "+ComputationUtils.performAnyOperation(10.0,20.0,new Adder()));
+	System.out.println("Subraction "+ComputationUtils.performAnyOperation(100.0,20.0,new Computable() {
+		@Override
+		public double compute(double d1,double d2) {
+			return d1-d2;
+		}
+	}
+	));
+	
+}
+}

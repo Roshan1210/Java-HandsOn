@@ -1,0 +1,83 @@
+package first;
+//FDinding frequency of elements in array
+public class Hundred14 {
+	static int n;
+public static void main(String[] args) {
+	int[] arr = {123,89,45,0,31,200,56,89,31,89};
+	int temp=0;
+	for(int i=0;i<arr.length;i++) {
+		for(int j=0;j<arr.length;j++) {
+			if(arr[i]<arr[j]) {
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+	}
+	for(int i:arr) {
+		System.out.print(i+" ");
+	}
+	System.out.println();
+	int[] visited=new int[arr.length];
+	
+	for(int i=0;i<arr.length-1;i++) {
+		if(arr[i]==arr[i+1]) {
+			visited[i]=-2;
+		}
+		else {
+			visited[i]=-1;
+		}
+	}
+	if(visited[arr.length-1]!=visited[arr.length-2]) {
+		visited[arr.length-1]=-1;
+	}
+	else {
+		visited[arr.length-1]=-2;
+	}
+	for(int i:visited) {
+		System.out.print(i+" ");
+	}
+	System.out.println();
+	int k=0;
+	 n=0;
+	int l=0;
+	for(int i:visited) {
+		if(i==-1) {
+			k++;
+		}
+	}
+	int [] arr2=new int[k];
+	int [] arr3=new int[k];
+	
+	for(int i=0;i<arr.length;i++) {
+		n=0;
+		if(visited[i]==-2) {
+			continue;
+		}
+		for(int j=0;j<arr.length;j++) {
+			if(arr[i]==arr[j]) {
+				n++;
+			}
+		}
+		arr2[l++]=n;
+	}
+	System.out.println();
+
+	for(int i:arr2) {
+		System.out.print(i+" ");
+	}
+	int m=0;
+	for(int i=0;i<arr.length;i++) {
+		if(visited[i]==-1) {
+			arr3[m++]=arr[i];
+		}
+		else
+			continue;
+	}
+	System.out.println();
+	for(int i=0;i<arr2.length;i++) {
+		System.out.println(arr3[i]+" frequency is "+arr2[i]);
+	}
+	
+}
+}

@@ -1,0 +1,17 @@
+package jdbc;
+import java.sql.*;
+public class Demo {
+	private static Connection cn=null;
+	public static Connection fetchConnection() throws SQLException{
+		if(cn==null) {
+			String val="jdbc:mysql://localhost:3306/";
+			cn=DriverManager.getConnection(val, "root", "manager");
+		}
+		return cn;
+	}
+public static void main(String [] args) {
+	try(Connection cn=
+			C)
+	
+}
+}

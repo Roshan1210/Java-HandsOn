@@ -1,0 +1,21 @@
+package first;
+//2)Interface implementing Anonymous class
+interface Z{
+	void show();
+}
+//class XZ implements Z{
+//	public void show() {
+//		System.out.println("In XZ implementation method of interface");//instead of implementing interface in class write anonymous class 
+//	}
+//}
+public class Ninetytwo {
+public static void main(String [] args) {
+Z a=new Z() {
+	@Override
+	public void show() {
+		System.out.println("In anonymous class  implementation method of interface");
+	}
+};
+a.show();
+}
+}

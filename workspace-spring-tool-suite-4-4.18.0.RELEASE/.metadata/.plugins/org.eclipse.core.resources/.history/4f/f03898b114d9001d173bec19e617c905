@@ -1,0 +1,16 @@
+package first;
+//Anonymous Inner class that defines inside method/constructor argument
+abstract class I{
+	abstract void show();
+}
+class Impl{
+	 void calc(){
+	System.out.println("In Calc call");
+	
+	}
+}
+public class Ninetythree {
+public static void main(String [] args) {
+	
+}
+}

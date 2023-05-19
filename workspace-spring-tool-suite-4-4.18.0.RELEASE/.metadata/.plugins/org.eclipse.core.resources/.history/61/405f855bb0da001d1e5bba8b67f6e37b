@@ -1,0 +1,32 @@
+package first;
+//Simple copying objects
+
+class Anjalii{
+	int a;
+	int b;
+	String c;
+	public Anjalii(int a, int b, String c) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Anjalii [a=" + a + ", b=" + b + ", c=" + c + "]";
+	}
+
+
+	public Anjalii(Anjalii e) {
+		e.a=a;
+		e.b=b;
+		e.c=c;
+	}
+	
+}
+public class Hundredseven {
+public static void main(String [] args) {
+	Anjalii a=new Anjalii(1,2,"roshan");
+}
+}

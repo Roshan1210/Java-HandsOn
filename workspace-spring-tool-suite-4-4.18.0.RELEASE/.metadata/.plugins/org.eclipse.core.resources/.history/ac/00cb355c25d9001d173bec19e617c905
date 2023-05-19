@@ -1,0 +1,30 @@
+package first;
+
+import java.util.*;
+
+//More HOF
+//converting list into MAP
+class Stud{
+	int id;
+	String str;
+	public Stud(int id, String str) {
+		this.id = id;
+		this.str = str;
+	}
+	@Override
+	public String toString() {
+		return "Stud [id=" + id + ", str=" + str + "]";
+	}
+	
+	
+}
+public class Ninetysix {
+public static void main(String [] args) {
+	List<Stud> l=new ArrayList<>();
+	l.add(new Stud(1,"roshan"));
+	l.add(new Stud(5,"rohan"));
+	l.add(new Stud(2,"rohit"));
+	l.add(new Stud(4,"roshani"));
+	System.out.println(l);
+}
+}

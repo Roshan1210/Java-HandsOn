@@ -1,0 +1,27 @@
+package first;
+
+class Bhopal
+{
+	int truck;
+	int car;
+	String health;
+	public Bhopal(int truck, int car, String health) {
+		this.truck = truck;
+		this.car = car;
+		this.health = health;
+	}
+	
+	
+}
+
+
+
+class Suman extends Bhopal {
+
+	 int age;
+	 String family;
+	 int workHours;
+	 
+	 
+	 
+}

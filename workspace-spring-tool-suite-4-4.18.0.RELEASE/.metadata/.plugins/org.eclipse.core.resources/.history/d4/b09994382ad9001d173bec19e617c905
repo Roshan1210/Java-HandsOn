@@ -1,0 +1,7 @@
+package first;
+import java.util.*;
+public class Ninetyseven {
+public static void main(String [] args) {
+	
+}
+}

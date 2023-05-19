@@ -1,0 +1,27 @@
+package first;
+
+abstract class Ii{
+	abstract void show();
+}
+class Impli{
+	 void calc(Ii i){
+	System.out.println("In Calc call");
+	i.show();
+	}
+}
+//class util extends Ii{
+//	void show() {
+//		System.out.println("In show  call");
+//	}
+//}
+public class Ninetyfour {
+public static void main(String [] args) {
+	Impli a=new Impli();
+	a.calc(new Ii() {
+		@Override
+		void show() {
+		System.out.println("In show  call");
+	}
+	});
+}
+}

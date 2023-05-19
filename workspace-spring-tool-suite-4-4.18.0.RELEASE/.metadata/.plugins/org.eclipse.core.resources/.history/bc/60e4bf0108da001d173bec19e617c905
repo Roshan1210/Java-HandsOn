@@ -1,0 +1,15 @@
+package first;
+//More about thread
+//Creating Thread by implementing runnable interface
+class MyThread implements Runnable{
+	public void run() {
+		System.out.println("Thread is in running State");
+	}
+}
+
+public class Hundredfour {
+public static void main(String[] args) {
+	Thread t=new Thread(new MyThread());
+	t.start();
+}
+}

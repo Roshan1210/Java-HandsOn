@@ -1,0 +1,13 @@
+package first;
+//More HOF
+//converting list into MAP
+class Stud{
+	int id;
+	String str;
+	
+}
+public class Ninetysix {
+public static void main(String [] args) {
+	
+}
+}

@@ -1,0 +1,8 @@
+package first;
+//Higher order functions
+//A higher order function is a function that takes a function as an argument, or returns a function 
+// The result of one higher-order function can be used as the input to another higher-order function.
+//Any time we pass a lambda expression to a method, that method is a higher-order function.
+public class Ninetyfive {
+
+}

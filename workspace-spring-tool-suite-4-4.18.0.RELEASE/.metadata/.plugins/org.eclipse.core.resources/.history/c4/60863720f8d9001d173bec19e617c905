@@ -1,0 +1,125 @@
+package first;
+import java.io.*;
+//Serialization and Deserialization
+//State of an object - The state or attributes are the built in characteristics or properties of an object.
+//For example, a T.V has the size, colour, model etc.
+//Behaviour of the object - The behavior or operations of an object are its predefined functions.
+
+//What is Byte Stream in Java? Byte streams are used to perform input and output of 8-bit bytes.
+//They are used to read bytes from the input stream and write bytes to the output stream. 
+//Mostly, they are used to read or write raw binary data.
+
+//Serialization is a mechanism of converting the state of an object into a byte stream.
+//Deserialization is the reverse process where the byte stream is used to recreate 
+//the actual Java object in memory. This mechanism is used to persist the object.
+
+
+//What does persist an object mean?
+//In object technology, a persistent object is one that continues to exist after the program
+//that created it has been unloaded. An object's class and current state must be saved for use 
+//in subsequent sessions
+//What does persist an object mean Java?
+//Object persistence means individual objects can outlive the application process;
+//they can be saved to a data store and be re-created at a later point in time.
+//When we talk about persistence in Java, we're normally talking about 
+//mapping and storing object instances in a database using SQL.
+
+
+
+//The byte stream created is platform independent. So, the object serialized on one 
+//platform can be deserialized on a different platform. To make a Java object
+//serializable we implement the java.io.Serializable interface. 
+//The ObjectOutputStream class contains writeObject() method for serializing an Object. 
+
+
+//public final void writeObject(Object obj)
+//                       throws IOException
+//The ObjectInputStream class contains readObject() method for deserializing an object. 
+// 
+//
+//public final Object readObject()
+//                  throws IOException,
+//               ClassNotFoundException
+
+
+//Advantages of Serialization 1. To save/persist state of an object. 2. To travel an object across a network
+
+//objects of those classes can be serialized which are implementing java.io.Serializable interface. 
+//Serializable is a marker interface (has no data member and method). It is used to “mark” 
+//java classes so that objects of these classes may get certain capability. 
+//Other examples of marker interfaces are:- Cloneable and Remote. 
+//Points to remember 1. If a parent class has implemented Serializable 
+//interface then child class doesn’t need to implement it but vice-versa
+//is not true. 2. Only non-static data members are saved via Serialization process. 
+//3. Static data members and transient data members are not saved via Serialization
+//process.So, if you don’t want to save value of a non-static data member
+//then make it transient. 4. Constructor of object is never called when an
+//object is deserialized. 5. Associated objects must be implementing Serializable interface
+
+//SerialVersionUID The Serialization runtime associates a version number with each Serializable 
+//class called a SerialVersionUID, which is used during Deserialization to verify that sender and
+//receiver of a serialized object have loaded classes for that object which are compatible with
+//respect to serialization. If the receiver has loaded a class for the object that has different UID
+//than that of corresponding sender’s class, the Deserialization will result in an InvalidClassException
+
+//A Serializable class can declare its own UID explicitly by declaring a field name.
+//It must be static, final and of type long. i.e- ANY-ACCESS-MODIFIER static final long 
+//serialVersionUID=42L; If a serializable class doesn’t explicitly declare a serialVersionUID,
+//then the serialization runtime will calculate a default one for that class based on various 
+//aspects of class, as described in Java Object Serialization Specification. However it is strongly 
+//recommended that all serializable classes explicitly declare serialVersionUID value, since its
+//computation is highly sensitive to class details that may vary depending on compiler implementations, 
+//any change in class or using different id may affect the serialized data. It is also recommended 
+//to use private modifier for UID since it is not useful as inherited member. serialver 
+//The serialver is a tool that comes with JDK. It is used to get serialVersionUID number 
+//for Java classes. You can run the following command to get 
+//serialVersionUID serialver [-classpath classpath] [-show] [classname…]
+
+class Emply implements Serializable{
+	private static final long serialversionUID=129348938L;
+	transient int a;
+	static int b;
+	String name;
+	int age;
+	
+	public Emply(int a,int b, String name, int age) {
+		this.a = a;
+		Emply.b=b;
+		this.name = name;
+		this.age = age;
+	}
+	
+	
+}
+
+public class Hundredtwo {
+	
+	public static void printdata(Emply obj) {
+		System.out.println("name= "+obj.name);
+		System.out.println("age= "+obj.age);
+		System.out.println("a= "+obj.a);
+		System.out.println("b= "+Emply.b);
+	}
+	
+	public static void main(String [] args) {
+		Emply e=new Emply(2,5,"roshan",25);
+		String filename="roshan2.txt";
+		//Serialization
+		try {
+			FileOutputStream file=new FileOutputStream(filename);
+			ObjectOutputStream out=new ObjectOutputStream(file);
+			
+			out.writeObject(e);//method for serialization of object
+			file.close();
+			out.close();
+			System.out.println("Object has been serialized");
+			System.out.println("Data before Deserialization of object");
+			printdata(e);
+			Emply.b=20;//value of static variable is changed
+		}
+		catch(IOException i) {
+			System.out.println("IO exception is caught");
+		}
+	}
+	
+}

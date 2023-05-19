@@ -1,0 +1,25 @@
+package first;
+//Simple copying objects
+
+class Anjali{
+	int a;
+	int b;
+	String c;
+	public Anjali(int a, int b, String c) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	
+	public Anjali(Anjali e) {
+		e.a=a;
+		e.b=b;
+		e.c=c;
+	}
+	
+}
+public class Hundredseven {
+public static void main(String [] args) {
+	
+}
+}

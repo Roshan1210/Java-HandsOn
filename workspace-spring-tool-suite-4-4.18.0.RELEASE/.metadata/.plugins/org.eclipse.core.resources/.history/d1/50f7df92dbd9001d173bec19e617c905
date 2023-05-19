@@ -1,0 +1,15 @@
+package first;
+import java.util.*;
+
+import java.util.stream.IntStream;
+//More about streams
+public class Hundred {
+public static void main(String [] args) {
+	int[] data= {23,45,12,11,6,45};//
+	IntStream i=Arrays.stream(data);//creating stream from int array
+	i.forEach(System.out::println);//displaying stream
+	
+	ArrayList<Integer> list=new ArrayList<>(Arrays.asList(23,12,11,6,3,4,2,1));
+	list.stream().forEach(j->System.out.println(j+" "));
+}
+}

@@ -1,0 +1,32 @@
+package first;
+import java.lang.*;
+//Reflection in java
+
+//Reflection is an API that is used to examine or modify the behavior of methods, classes, and interfaces at runtime
+//Reflection gives us information about the class to which an object belongs and also the methods of that 
+//class that can be executed by using the object.
+//Through reflection, we can invoke methods at runtime irrespective of the access specifier used with them.
+
+//Reflection can be used to get information about class, constructors, and methods
+//I’ve found reflection is very good for testing code. In the research world it is sometimes very 
+//beneficial to take advantage of its dynamic capabilities. You can also use it to by pass private, protected, 
+//etc. Again this is done for analyzing a class rather then for use in real world code.
+
+
+
+
+
+public class Hundredeight {
+	
+public static void main(String [] args) {
+	
+	Class c=Sumans.class;
+	
+	String className=c.getName();
+	System.out.println(className);
+	
+}
+}
+//constructor chaining
+
+//Constructor chaining is the process of calling one constructor from another constructor with respect to current object. 

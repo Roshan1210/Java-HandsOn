@@ -1,0 +1,18 @@
+package first;
+
+import java.util.Arrays;
+
+//sorting efficient way
+public class Hundred15 {
+public static void main(String [] args) {
+	int [] arr= {34,67,98,12,67,0,76,12,67,43};
+	
+	int n=arr.length;
+	boolean [] visited=new boolean[n];
+	Arrays.fill(visited, false);
+	
+	
+	
+	
+}
+}
